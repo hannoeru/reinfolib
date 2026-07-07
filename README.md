@@ -1,8 +1,8 @@
 # reinfolib
 
-Unofficial TypeScript client for Japan MLIT Real Estate Information Library API.
+Unofficial TypeScript client for Japan MLIT [Real Estate Information Library](https://www.reinfolib.mlit.go.jp/) (不動産情報ライブラリ) API.
 
-This package is not affiliated with, endorsed by, or sponsored by Japan MLIT. Users must comply with MLIT terms of use and obtain their own API key.
+This package is not affiliated with, endorsed by, or sponsored by Japan MLIT. Users must comply with [MLIT terms of use](https://www.reinfolib.mlit.go.jp/help/termsOfUse/) and obtain their own API key. See [Get an API key](#get-an-api-key) below.
 
 > MLIT documents recommend not sending API requests directly from browsers because of CORS. Use this client from Node.js, server-side rendering, edge/server runtimes, or your own backend/proxy.
 
@@ -11,6 +11,32 @@ This package is not affiliated with, endorsed by, or sponsored by Japan MLIT. Us
 ```bash
 pnpm add reinfolib
 ```
+
+## Get an API key
+
+Every request requires an MLIT API key. MLIT issues keys per applicant after a short review.
+
+1. Read the [API terms of use](https://www.reinfolib.mlit.go.jp/help/termsOfUse/).
+2. Open the [API application page](https://www.reinfolib.mlit.go.jp/api/request/) and fill in the requester information. Pick the applicant type that matches you (`個人` for personal use, `法人` for organizations with a corporate number, or `法人以外の団体` otherwise). You only need to apply for API access — the web UI does not require a key.
+3. Submit and wait for the review result. MLIT notifies approved applicants by email, typically within **5 business days**.
+4. Once approved, you receive an API key by email. Set it as an environment variable and pass it to the client. reinfolib sends it on every request as the `Ocp-Apim-Subscription-Key` header automatically.
+
+```bash
+# .env (do not commit)
+REINFOLIB_API_KEY=your-issued-api-key
+```
+
+```ts
+import { createClient } from "reinfolib"
+
+const client = createClient({
+  apiKey: process.env.REINFOLIB_API_KEY!,
+})
+```
+
+> **Keep the key server-side.** MLIT recommends not calling the API directly from browsers (CORS), so use this client from Node.js, an edge/server runtime, or your own backend/proxy. Never expose the key in client bundles.
+
+If you already have a key and want to change or stop using it, contact MLIT via the [contact form](https://www.reinfolib.mlit.go.jp/help/contact/) (select an API-related topic).
 
 ## Quick start
 
@@ -110,6 +136,111 @@ const client = createClient({
     },
   },
 })
+```
+
+## Helper utilities
+
+reinfolib exports the building blocks it uses internally so you can validate input, build URLs, inspect endpoint metadata, and work with prefecture codes and tile coordinates without making a request.
+
+### Validate and normalize requests
+
+`validateRequest(endpoint, params)` runs the same Valibot validation the client uses and returns the normalized params, or throws `ReinfolibValidationError`. Use it to check input before queuing work or to fail fast in tests.
+
+```ts
+import { validateRequest, ReinfolibValidationError } from "reinfolib"
+
+try {
+  const params = validateRequest("XIT001", {
+    year: 2024,
+    quarter: 1,
+    area: "13",
+  })
+} catch (error) {
+  if (error instanceof ReinfolibValidationError) {
+    console.error(error.endpoint, error.issues)
+  }
+}
+```
+
+`normalizeQuery(endpoint, params)` converts validated params into the query string MLIT expects (arrays become comma-separated strings; tile coordinates resolve to `z`/`x`/`y`). Pair it with `validateRequest` when you build URLs yourself.
+
+```ts
+import { validateRequest, normalizeQuery } from "reinfolib"
+
+const params = validateRequest("XIT002", { area: "13" })
+const query = normalizeQuery("XIT002", params)
+// { area: "13" }
+```
+
+Each endpoint also has a ready-made Valibot schema (`xit001RequestSchema`, `xkt002RequestSchema`, …) and a `requestSchemas` map keyed by endpoint ID, useful for form validation or composing with your own schemas.
+
+```ts
+import { requestSchemas } from "reinfolib"
+// requestSchemas.XIT001, requestSchemas.XKT002, ...
+```
+
+### Convert coordinates to tile coordinates
+
+`lonLatToTile(longitude, latitude, zoom)` converts a WGS84 lon/lat to Web Mercator `{ z, x, y }` tile coordinates. Call it directly, or pass `zoom`/`longitude`/`latitude` to any tile endpoint and the client calls it for you.
+
+```ts
+import { lonLatToTile } from "reinfolib"
+
+const { z, x, y } = lonLatToTile(139.767, 35.681, 14)
+// { z: 14, x: 14552, y: 6451 }
+```
+
+It throws `TypeError`/`RangeError` for non-finite values, out-of-range coordinates, or non-integer zoom levels.
+
+### Prefecture codes and names
+
+`PREFECTURES` is the full list of Japan's 47 prefectures with `code`, `nameJa`, and `nameEn`. `getPrefectureName(code, language?)` looks up a display name from a `PrefectureCode` (`"01"`–`"47"`).
+
+```ts
+import { PREFECTURES, getPrefectureName } from "reinfolib"
+
+getPrefectureName("13")            // "東京都"
+getPrefectureName("13", "en")      // "Tokyo"
+PREFECTURES.length                  // 47
+```
+
+### Endpoint metadata
+
+`endpoints` is the full endpoint registry (ID, method/alias names, path, manual URL, category, kind, params, and response fields). `endpointAliases` maps the friendly alias (`getRealEstatePrices`) to its endpoint ID, and `endpointIds` lists every ID.
+
+```ts
+import { endpoints, endpointAliases, endpointIds } from "reinfolib"
+
+endpoints.XKT002.manualUrl          // https://www.reinfolib.mlit.go.jp/help/apiManual/xkt002/
+endpointAliases.getUseDistricts     // "XKT002"
+endpointIds                         // ["XIT001", "XIT002", ...]
+```
+
+### Constants and errors
+
+`DEFAULT_BASE_URL` is the MLIT API base (`https://www.reinfolib.mlit.go.jp/ex-api/external`) and `SUBSCRIPTION_KEY_HEADER` is the header name (`Ocp-Apim-Subscription-Key`) the client sets from `apiKey`.
+
+```ts
+import { DEFAULT_BASE_URL, SUBSCRIPTION_KEY_HEADER } from "reinfolib"
+```
+
+Errors come in two forms:
+
+- `ReinfolibValidationError` — thrown by `validateRequest` and the client before any network call. Carries `endpoint` and an `issues` array of `{ path, message }`.
+- `ReinfolibApiError` — thrown for non-2xx HTTP or parsing failures. Carries `endpoint`, `status`, `statusText`, `url`, and `responseText`.
+
+```ts
+import { ReinfolibApiError, ReinfolibValidationError } from "reinfolib"
+
+try {
+  await client.xit001({ year: 2024, area: "13" })
+} catch (error) {
+  if (error instanceof ReinfolibValidationError) {
+    // bad params, nothing was sent over the network
+  } else if (error instanceof ReinfolibApiError) {
+    console.error(error.status, error.url, error.responseText)
+  }
+}
 ```
 
 ## Endpoint methods
