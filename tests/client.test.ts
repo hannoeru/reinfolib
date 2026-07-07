@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { describe, expect, expectTypeOf, it, vi } from "vitest";
 import {
 	ReinfolibApiError,
@@ -8,6 +8,8 @@ import {
 	endpoints,
 	getPrefectureName,
 	lonLatToTile,
+	validateRequest,
+	type EndpointId,
 	type XIT001Response,
 	type XPT001GeoJsonResponse,
 } from "../src/index";
@@ -282,14 +284,81 @@ describe("endpoint kinds", () => {
 });
 
 describe("fixtures", () => {
-	it("matches the live XIT002 wrapper shape", async () => {
-		const fixtureText = await readFile("tests/fixtures/xit002.json", "utf8");
-		let fixture: unknown;
+	async function readFixture(endpoint: EndpointId) {
+		const path = `tests/fixtures/${endpoint.toLowerCase()}.json`;
+		const fixtureText = await readFile(path, "utf8");
 		try {
-			fixture = JSON.parse(fixtureText) as unknown;
+			return JSON.parse(fixtureText) as Record<string, unknown>;
 		} catch (error) {
-			throw new Error("Invalid tests/fixtures/xit002.json", { cause: error });
+			throw new Error(`Invalid ${path}`, { cause: error });
 		}
+	}
+
+	function expectTrimmedCollection(
+		fixture: Record<string, unknown>,
+		items: unknown[],
+	) {
+		expect(items.length).toBeLessThanOrEqual(5);
+		expect(fixture.originalItemCount).toBeGreaterThanOrEqual(items.length);
+		expect(fixture.truncated).toBe(
+			(fixture.originalItemCount as number) > items.length,
+		);
+	}
+
+	it("has a fixture file for every endpoint", async () => {
+		const files = await readdir("tests/fixtures");
+		const fixtureFiles = new Set(
+			files.filter((file) => file.endsWith(".json")),
+		);
+
+		expect(fixtureFiles.size).toBe(endpointIds.length);
+		for (const endpoint of endpointIds) {
+			expect(fixtureFiles).toContain(`${endpoint.toLowerCase()}.json`);
+		}
+	});
+
+	it.each(
+		endpointIds,
+	)("%s fixture matches endpoint metadata", async (endpoint) => {
+		const definition = endpoints[endpoint];
+		const fixture = await readFixture(endpoint);
+
+		expect(fixture).toMatchObject({
+			endpoint,
+			methodName: definition.methodName,
+			alias: definition.alias,
+			kind: definition.kind,
+		});
+		expect(typeof fixture.fetchedAt).toBe("string");
+		expect(Number.isNaN(Date.parse(fixture.fetchedAt as string))).toBe(false);
+		expect(() => validateRequest(endpoint, fixture.params)).not.toThrow();
+	});
+
+	it.each(
+		endpointIds,
+	)("%s fixture matches response shape", async (endpoint) => {
+		const definition = endpoints[endpoint];
+		const fixture = await readFixture(endpoint);
+
+		if (definition.kind === "json") {
+			expect(fixture.data).toMatchObject({ status: "OK" });
+			expect(fixture.data).toHaveProperty("data");
+			const data = (fixture.data as { data: unknown }).data;
+			expect(Array.isArray(data)).toBe(true);
+			expectTrimmedCollection(fixture, data as unknown[]);
+			return;
+		}
+
+		expect(fixture.data).toMatchObject({ type: "FeatureCollection" });
+		expect(fixture.data).toHaveProperty("features");
+		const features = (fixture.data as { features: unknown }).features;
+		expect(Array.isArray(features)).toBe(true);
+		expectTrimmedCollection(fixture, features as unknown[]);
+	});
+
+	it("keeps the live XIT002 wrapper sample recognizable", async () => {
+		const fixture = await readFixture("XIT002");
+
 		expect(fixture).toMatchObject({
 			endpoint: "XIT002",
 			data: {
