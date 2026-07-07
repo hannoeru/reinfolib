@@ -1,0 +1,67 @@
+{
+  "name": "reinfolib",
+  "version": "0.1.0",
+  "description": "Unofficial TypeScript client for Japan MLIT Real Estate Information Library API.",
+  "type": "module",
+  "license": "MIT",
+  "author": "",
+  "homepage": "https://github.com/your-org/reinfolib#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/reinfolib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/reinfolib/issues"
+  },
+  "keywords": [
+    "mlit",
+    "real-estate",
+    "japan",
+    "api-client",
+    "typescript"
+  ],
+  "packageManager": "pnpm@11.9.0",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "files": [
+    "dist",
+    "openapi",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "check": "pnpm typecheck && pnpm test && pnpm build",
+    "sample": "pnpm build && node scripts/sample.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm check"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^24.0.0",
+    "tsdown": "^0.16.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.0"
+  },
+  "dependencies": {
+    "ofetch": "^1.5.1",
+    "valibot": "^1.4.2"
+  }
+}
