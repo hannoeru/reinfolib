@@ -173,7 +173,19 @@ The script skips when `REINFOLIB_API_KEY` is not set and writes sanitized output
 This repository includes GitHub Actions workflows:
 
 - `.github/workflows/ci.yml` runs install, typecheck, tests, build, and a `pnpm publish --dry-run` package check.
-- `.github/workflows/publish.yml` publishes to npm with GitHub OIDC trusted publishing and provenance.
+- `.github/workflows/publish.yml` publishes tag pushes to npm with GitHub OIDC trusted publishing and provenance.
+
+Create a changelog, bump `package.json`, commit, tag, and create a GitHub release with changelogen:
+
+```bash
+pnpm release
+```
+
+Then push the generated commit and tag:
+
+```bash
+git push --follow-tags
+```
 
 Before the first release, configure npm trusted publishing for this package and workflow in npm, or with npm CLI:
 
@@ -181,7 +193,7 @@ Before the first release, configure npm trusted publishing for this package and 
 npm trust github reinfolib --file .github/workflows/publish.yml --allow-publish
 ```
 
-Publishing then happens when a GitHub Release is published, or manually through the `Publish` workflow. No `NPM_TOKEN` secret is required for trusted publishing.
+Publishing happens when a `v*` tag is pushed, or manually through the `Publish` workflow. No `NPM_TOKEN` secret is required for trusted publishing.
 
 ## License
 

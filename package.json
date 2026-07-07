@@ -5,13 +5,13 @@
   "type": "module",
   "license": "MIT",
   "author": "",
-  "homepage": "https://github.com/your-org/reinfolib#readme",
+  "homepage": "https://github.com/hannoeru/reinfolib#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/reinfolib.git"
+    "url": "git+https://github.com/hannoeru/reinfolib.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/reinfolib/issues"
+    "url": "https://github.com/hannoeru/reinfolib/issues"
   },
   "keywords": [
     "mlit",
@@ -45,6 +45,7 @@
   "scripts": {
     "build": "tsdown",
     "check": "pnpm typecheck && pnpm test && pnpm build",
+    "release": "changelogen --bump --release",
     "sample": "pnpm build && node scripts/sample.mjs",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
@@ -56,6 +57,7 @@
   "devDependencies": {
     "@types/geojson": "^7946.0.16",
     "@types/node": "^24.0.0",
+    "changelogen": "^0.6.2",
     "tsdown": "^0.16.0",
     "typescript": "^5.9.0",
     "vitest": "^4.0.0"
