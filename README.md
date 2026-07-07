@@ -299,6 +299,8 @@ REINFOLIB_API_KEY=... pnpm sample
 
 The script skips when `REINFOLIB_API_KEY` is not set and writes sanitized output under `tests/fixtures/` when run.
 
+Fixtures contain real (truncated) MLIT API data and are used here for library testing only. See [`tests/fixtures/README.md`](tests/fixtures/README.md) for the required source attribution (出典) and dataset-specific terms.
+
 ## CI and publishing
 
 This repository includes GitHub Actions workflows:
