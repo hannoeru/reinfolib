@@ -1,0 +1,205 @@
+{
+  "endpoint": "XKT024",
+  "methodName": "xkt024",
+  "alias": "getHighIntensityUseDistricts",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:35.242Z",
+  "truncated": false,
+  "originalItemCount": 3,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "advanced_use",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                139.76809322834015,
+                35.67889062370027
+              ],
+              [
+                139.76809322834015,
+                35.67535224832935
+              ],
+              [
+                139.76760506629944,
+                35.67547426388485
+              ],
+              [
+                139.76649463176727,
+                35.67581852105363
+              ],
+              [
+                139.7661942243576,
+                35.675896959188165
+              ],
+              [
+                139.76809322834015,
+                35.67889062370027
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "_id": "-pQo2Z4B6FvOHK1GU9BP",
+          "_index": "bs026_advanced_use_202606181415",
+          "advanced_name": "",
+          "group_code": "13102",
+          "prefecture": "東京都",
+          "decision_type_ja": "",
+          "notice_number_s": "",
+          "decision_date": "",
+          "city_name": "中央区",
+          "advanced_type_ja": "高度利用地区",
+          "notice_number": "",
+          "decision_maker": "",
+          "kubun_id": "19",
+          "first_decision_date": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                139.76809322834015,
+                35.67535224832935
+              ],
+              [
+                139.76809322834015,
+                35.67512564751708
+              ],
+              [
+                139.76564705371857,
+                35.67512564751708
+              ],
+              [
+                139.76592600345612,
+                35.67551784082376
+              ],
+              [
+                139.7659957408905,
+                35.67558320618748
+              ],
+              [
+                139.7661942243576,
+                35.675896959188165
+              ],
+              [
+                139.76649463176727,
+                35.67581852105363
+              ],
+              [
+                139.76760506629944,
+                35.67547426388485
+              ],
+              [
+                139.76809322834015,
+                35.67535224832935
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "_id": "9JQo2Z4B6FvOHK1GU9BP",
+          "_index": "bs026_advanced_use_202606181415",
+          "advanced_name": "",
+          "group_code": "13102",
+          "prefecture": "東京都",
+          "decision_type_ja": "",
+          "notice_number_s": "",
+          "decision_date": "",
+          "city_name": "中央区",
+          "advanced_type_ja": "高度利用地区",
+          "notice_number": "",
+          "decision_maker": "",
+          "kubun_id": "19",
+          "first_decision_date": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                139.7641557455063,
+                35.67512564751708
+              ],
+              [
+                139.7637641429901,
+                35.67512564751708
+              ],
+              [
+                139.76410746574402,
+                35.675413256130426
+              ],
+              [
+                139.76404309272766,
+                35.675465548494216
+              ],
+              [
+                139.76411283016205,
+                35.675530913900786
+              ],
+              [
+                139.76460099220276,
+                35.675413256130426
+              ],
+              [
+                139.7645741701126,
+                35.6753783945355
+              ],
+              [
+                139.76451516151428,
+                35.675343532925396
+              ],
+              [
+                139.76439714431763,
+                35.675326102114624
+              ],
+              [
+                139.7641557455063,
+                35.67512564751708
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "_id": "7JQo2Z4B6FvOHK1GU9Ap",
+          "_index": "bs026_advanced_use_202606181415",
+          "advanced_name": "有楽町駅前地区高度利用地区",
+          "group_code": "13101",
+          "prefecture": "東京都",
+          "decision_type_ja": "",
+          "notice_number_s": "",
+          "decision_date": "平成13年4月26日",
+          "city_name": "千代田区",
+          "advanced_type_ja": "高度利用地区",
+          "notice_number": "区告第42号",
+          "decision_maker": "",
+          "kubun_id": "19",
+          "first_decision_date": ""
+        }
+      }
+    ]
+  }
+}

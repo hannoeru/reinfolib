@@ -1,0 +1,26 @@
+{
+  "endpoint": "XKT030",
+  "methodName": "xkt030",
+  "alias": "getUrbanPlanningRoads",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:40.880Z",
+  "truncated": false,
+  "originalItemCount": 0,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "city_planning_road",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": []
+  }
+}

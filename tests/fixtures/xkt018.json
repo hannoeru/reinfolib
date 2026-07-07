@@ -1,0 +1,65 @@
+{
+  "endpoint": "XKT018",
+  "methodName": "xkt018",
+  "alias": "getMunicipalOffices",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:31.951Z",
+  "truncated": false,
+  "originalItemCount": 2,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "city_town_hall",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.76756751537323,
+            35.68919110894487
+          ]
+        },
+        "properties": {
+          "_id": "bq45B44Byh1a-fbIUxW9",
+          "_index": "bs009_city_town_hall_202403040208",
+          "P05_004_ja": "千代田区内神田2-1-8",
+          "P05_003_ja": "スポーツセンター",
+          "P05_002": "5",
+          "P05_001": "13101",
+          "P05_002_name_ja": "集会施設"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.76487457752228,
+            35.689618088508155
+          ]
+        },
+        "properties": {
+          "_id": "e645B44Byh1a-fbIUxW9",
+          "_index": "bs009_city_town_hall_202403040208",
+          "P05_004_ja": "千代田区内神田1-1-3",
+          "P05_003_ja": "神田集会室",
+          "P05_002": "5",
+          "P05_001": "13101",
+          "P05_002_name_ja": "集会施設"
+        }
+      }
+    ]
+  }
+}

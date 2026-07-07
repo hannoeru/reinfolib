@@ -1,0 +1,26 @@
+{
+  "endpoint": "XKT016",
+  "methodName": "xkt016",
+  "alias": "getDisasterRiskAreas",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:30.875Z",
+  "truncated": false,
+  "originalItemCount": 0,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "disaster_risk_area",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": []
+  }
+}

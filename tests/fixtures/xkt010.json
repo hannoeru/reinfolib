@@ -1,0 +1,157 @@
+{
+  "endpoint": "XKT010",
+  "methodName": "xkt010",
+  "alias": "getMedicalFacilities",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:27.861Z",
+  "truncated": true,
+  "originalItemCount": 139,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "medical_institution",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.75992858409882,
+            35.68681218096715
+          ]
+        },
+        "properties": {
+          "_id": "i7s0B44B_RVTRAlpUNq_",
+          "_index": "bs007_medical_institution_202403040203",
+          "P04_001": 1,
+          "P04_010": 9,
+          "P04_006": "",
+          "P04_005": "",
+          "P04_004": "内科　外科　産婦人科　眼科　耳鼻いんこう科　皮膚泌尿器科　放射線科　歯科",
+          "P04_009": 9,
+          "P04_008": 20,
+          "P04_007": 1,
+          "P04_001_name_ja": "病院",
+          "P04_003_ja": "千代田区千代田1-2",
+          "P04_002_ja": "宮内庁病院",
+          "medical_subject_ja": "内科　外科　産婦人科　眼科　耳鼻いんこう科　皮膚泌尿器科　放射線科　歯科"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.7572785615921,
+            35.6910863579303
+          ]
+        },
+        "properties": {
+          "_id": "-Ls0B44B_RVTRAlpSLFl",
+          "_index": "bs007_medical_institution_202403040203",
+          "P04_001": 2,
+          "P04_010": 9,
+          "P04_006": "",
+          "P04_005": "",
+          "P04_004": "眼．耳咽．皮．内",
+          "P04_009": 9,
+          "P04_008": 0,
+          "P04_007": 9,
+          "P04_001_name_ja": "診療所",
+          "P04_003_ja": "千代田区一ツ橋一丁目１番１号　パレスサイドビル１階",
+          "P04_002_ja": "パレスクリニック",
+          "medical_subject_ja": "眼．耳咽．皮．内"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.76160764694214,
+            35.68514340343769
+          ]
+        },
+        "properties": {
+          "_id": "-bs0B44B_RVTRAlpSLFl",
+          "_index": "bs007_medical_institution_202403040203",
+          "P04_001": 2,
+          "P04_010": 9,
+          "P04_006": "",
+          "P04_005": "",
+          "P04_004": "内",
+          "P04_009": 9,
+          "P04_008": 0,
+          "P04_007": 9,
+          "P04_001_name_ja": "診療所",
+          "P04_003_ja": "千代田区丸の内一丁目１番１号　パレスホテル地下１階",
+          "P04_002_ja": "パレスホテル診療室",
+          "medical_subject_ja": "内"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.76675748825073,
+            35.67582723640572
+          ]
+        },
+        "properties": {
+          "_id": "f7s0B44B_RVTRAlpSLNl",
+          "_index": "bs007_medical_institution_202403040203",
+          "P04_001": 2,
+          "P04_010": 9,
+          "P04_006": "",
+          "P04_005": "",
+          "P04_004": "内科",
+          "P04_009": 9,
+          "P04_008": 0,
+          "P04_007": 9,
+          "P04_001_name_ja": "診療所",
+          "P04_003_ja": "東京都中央区八重洲二丁目１１番２号　城辺橋ビル１階",
+          "P04_002_ja": "ヘルス・マネジメント・クリニック",
+          "medical_subject_ja": "内科"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.7654163837433,
+            35.68548326174431
+          ]
+        },
+        "properties": {
+          "_id": "o7s0B44B_RVTRAlpSLRm",
+          "_index": "bs007_medical_institution_202403040203",
+          "P04_001": 2,
+          "P04_010": 9,
+          "P04_006": "",
+          "P04_005": "",
+          "P04_004": "内．精．整　眼科",
+          "P04_009": 9,
+          "P04_008": 0,
+          "P04_007": 9,
+          "P04_001_name_ja": "診療所",
+          "P04_003_ja": "千代田区大手町一丁目５番５号　大手町タワー９階",
+          "P04_002_ja": "みずほ健康保険組合大手町健康開発センター",
+          "medical_subject_ja": "内．精．整　眼科"
+        }
+      }
+    ]
+  }
+}

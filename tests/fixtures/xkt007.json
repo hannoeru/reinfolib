@@ -1,0 +1,93 @@
+{
+  "endpoint": "XKT007",
+  "methodName": "xkt007",
+  "alias": "getPreschools",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:27.275Z",
+  "truncated": false,
+  "originalItemCount": 3,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "preschool",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.76499259471893,
+            35.67859867009467
+          ]
+        },
+        "properties": {
+          "_id": "FSX6lpABk4JyLPT2uz-u",
+          "_index": "bs006_preschool_202407091911",
+          "welfareFacilityClassCode": "05",
+          "welfareFacilityMiddleClassCode": "0504",
+          "preSchoolName_ja": "キッズスクウェア丸の内東京ビル",
+          "location_ja": "丸の内2-7-3",
+          "welfareFacilityMinorClassCode": "050401",
+          "administratorCode": 4,
+          "administrativeAreaCode": "13101",
+          "schoolCode": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.76753532886505,
+            35.69011913304021
+          ]
+        },
+        "properties": {
+          "_id": "FyX6lpABk4JyLPT2uz-u",
+          "_index": "bs006_preschool_202407091911",
+          "welfareFacilityClassCode": "05",
+          "welfareFacilityMiddleClassCode": "0504",
+          "preSchoolName_ja": "マミーズエンジェル神田駅前保育園",
+          "location_ja": "内神田2-5-2",
+          "welfareFacilityMinorClassCode": "050401",
+          "administratorCode": 4,
+          "administrativeAreaCode": "13101",
+          "schoolCode": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.76503551006317,
+            35.684119462608166
+          ]
+        },
+        "properties": {
+          "_id": "ayX6lpABk4JyLPT2vUQf",
+          "_index": "bs006_preschool_202407091911",
+          "welfareFacilityClassCode": "05",
+          "welfareFacilityMiddleClassCode": "0504",
+          "preSchoolName_ja": "キッズスクウェア　丸の内永楽ビル",
+          "location_ja": "丸の内1-4-1　丸の内永楽ビルディング2階",
+          "welfareFacilityMinorClassCode": "050401",
+          "administratorCode": 4,
+          "administrativeAreaCode": "13101",
+          "schoolCode": ""
+        }
+      }
+    ]
+  }
+}

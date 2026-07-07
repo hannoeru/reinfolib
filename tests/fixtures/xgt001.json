@@ -1,0 +1,55 @@
+{
+  "endpoint": "XGT001",
+  "methodName": "xgt001",
+  "alias": "getEmergencyEvacuationSites",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:41.990Z",
+  "truncated": false,
+  "originalItemCount": 1,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "evacuation_facilities",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.7675997018814,
+            35.6890996130268
+          ]
+        },
+        "properties": {
+          "_id": "om3y054B6FvOHK1GkXEa",
+          "_index": "bi001_evacuation_facilities_202606171358",
+          "volcanic_phenomenon_flag": false,
+          "tsunami_flag": false,
+          "earthquake_flag": true,
+          "large_fire_flag": false,
+          "landslide_flag": false,
+          "flood_flag": true,
+          "same_address_flag": true,
+          "address_ja": "東京都千代田区内神田2-1-8",
+          "prefecture_and_city": "東京都千代田区",
+          "inland_flooding_flag": true,
+          "high_tide_flag": true,
+          "facility_name_ja": "区立スポーツセンター",
+          "remarks": "",
+          "common_id": "E1310100006201"
+        }
+      }
+    ]
+  }
+}

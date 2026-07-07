@@ -1,0 +1,222 @@
+{
+  "endpoint": "XKT025",
+  "methodName": "xkt025",
+  "alias": "getLiquefactionTendencyAreas",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:35.818Z",
+  "truncated": true,
+  "originalItemCount": 72,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "liquefaction_tendency_map",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                139.74606692790985,
+                35.689583233119265
+              ],
+              [
+                139.74606692790985,
+                35.69166581587238
+              ],
+              [
+                139.74687695503235,
+                35.69166581587238
+              ],
+              [
+                139.74687695503235,
+                35.689583233119265
+              ],
+              [
+                139.74606692790985,
+                35.689583233119265
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "_id": "DWTht5IBJx74NFAD37_l",
+          "_index": "bs028_liquefaction_tendency_map_202410231432",
+          "topographic_classification_name_ja": "ローム台地",
+          "mesh_code": "5339452943",
+          "note": "液状化しにくい",
+          "topographic_classification_code": 9,
+          "liquefaction_tendency_level": 5
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                139.74687695503235,
+                35.689583233119265
+              ],
+              [
+                139.74687695503235,
+                35.69166581587238
+              ],
+              [
+                139.74999904632568,
+                35.69166581587238
+              ],
+              [
+                139.74999904632568,
+                35.689583233119265
+              ],
+              [
+                139.74687695503235,
+                35.689583233119265
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "_id": "DmTht5IBJx74NFAD37_l",
+          "_index": "bs028_liquefaction_tendency_map_202410231432",
+          "topographic_classification_name_ja": "ローム台地",
+          "mesh_code": "5339452944",
+          "note": "液状化しにくい",
+          "topographic_classification_code": 9,
+          "liquefaction_tendency_level": 5
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                139.74999904632568,
+                35.689583233119265
+              ],
+              [
+                139.74999904632568,
+                35.69166581587238
+              ],
+              [
+                139.75312650203705,
+                35.69166581587238
+              ],
+              [
+                139.75312650203705,
+                35.689583233119265
+              ],
+              [
+                139.74999904632568,
+                35.689583233119265
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "_id": "wGTht5IBJx74NFAD4MTr",
+          "_index": "bs028_liquefaction_tendency_map_202410231432",
+          "topographic_classification_name_ja": "ローム台地",
+          "mesh_code": "5339462033",
+          "note": "液状化しにくい",
+          "topographic_classification_code": 9,
+          "liquefaction_tendency_level": 5
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                139.75624859333038,
+                35.689583233119265
+              ],
+              [
+                139.75624859333038,
+                35.69166581587238
+              ],
+              [
+                139.75937604904175,
+                35.69166581587238
+              ],
+              [
+                139.75937604904175,
+                35.689583233119265
+              ],
+              [
+                139.75624859333038,
+                35.689583233119265
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "_id": "wmTht5IBJx74NFAD4MTr",
+          "_index": "bs028_liquefaction_tendency_map_202410231432",
+          "topographic_classification_name_ja": "後背湿地",
+          "mesh_code": "5339462043",
+          "note": "やや液状化しやすい",
+          "topographic_classification_code": 13,
+          "liquefaction_tendency_level": 3
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                139.75937604904175,
+                35.689583233119265
+              ],
+              [
+                139.75937604904175,
+                35.69166581587238
+              ],
+              [
+                139.76249814033508,
+                35.69166581587238
+              ],
+              [
+                139.76249814033508,
+                35.689583233119265
+              ],
+              [
+                139.75937604904175,
+                35.689583233119265
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "_id": "w2Tht5IBJx74NFAD4MTr",
+          "_index": "bs028_liquefaction_tendency_map_202410231432",
+          "topographic_classification_name_ja": "後背湿地",
+          "mesh_code": "5339462044",
+          "note": "やや液状化しやすい",
+          "topographic_classification_code": 13,
+          "liquefaction_tendency_level": 3
+        }
+      }
+    ]
+  }
+}

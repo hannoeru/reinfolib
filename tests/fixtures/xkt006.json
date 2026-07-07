@@ -1,0 +1,147 @@
+{
+  "endpoint": "XKT006",
+  "methodName": "xkt006",
+  "alias": "getSchools",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:26.734Z",
+  "truncated": false,
+  "originalItemCount": 5,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "school",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.7619777917862,
+            35.692606881454694
+          ]
+        },
+        "properties": {
+          "_id": "EU6SmpABk4JyLPT24iHV",
+          "_index": "bs005_school_202407101157",
+          "P29_004_ja": "錦城学園高等学校",
+          "P29_003_name_ja": "高等学校",
+          "P29_005_ja": "東京都千代田区神田錦町3-1",
+          "P29_008": "00",
+          "P29_003": 16004,
+          "P29_002": "D113310100053",
+          "P29_009_ja": "",
+          "P29_001": "13101",
+          "P29_007": 0,
+          "P29_006": 4
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.7615486383438,
+            35.692676589574646
+          ]
+        },
+        "properties": {
+          "_id": "Ek6SmpABk4JyLPT24iHV",
+          "_index": "bs005_school_202407101157",
+          "P29_004_ja": "正則学園高等学校",
+          "P29_003_name_ja": "高等学校",
+          "P29_005_ja": "東京都千代田区神田錦町3-1",
+          "P29_008": "00",
+          "P29_003": 16004,
+          "P29_002": "D113310100071",
+          "P29_009_ja": "",
+          "P29_001": "13101",
+          "P29_007": 0,
+          "P29_006": 4
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.74637269973755,
+            35.69252410298313
+          ]
+        },
+        "properties": {
+          "_id": "Uk6SmpABk4JyLPT24iHV",
+          "_index": "bs005_school_202407101157",
+          "P29_004_ja": "二松学舎大学附属高等学校",
+          "P29_003_name_ja": "高等学校",
+          "P29_005_ja": "東京都千代田区九段南2-1-32",
+          "P29_008": "00",
+          "P29_003": 16004,
+          "P29_002": "D113310100115",
+          "P29_009_ja": "",
+          "P29_001": "13101",
+          "P29_007": 0,
+          "P29_006": 4
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.75813686847687,
+            35.69250231916054
+          ]
+        },
+        "properties": {
+          "_id": "906SmpABk4JyLPT25CpJ",
+          "_index": "bs005_school_202407101157",
+          "P29_004_ja": "総合研究大学院大学",
+          "P29_003_name_ja": "大学",
+          "P29_005_ja": "東京都千代田区一ツ橋2-1-2",
+          "P29_008": "04",
+          "P29_003": 16007,
+          "P29_002": "F114110104609",
+          "P29_009_ja": "情報学コース",
+          "P29_001": "13101",
+          "P29_007": 0,
+          "P29_006": 1
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.76110875606537,
+            35.676768488829154
+          ]
+        },
+        "properties": {
+          "_id": "IU6SmpABk4JyLPT25CpJ",
+          "_index": "bs005_school_202407101157",
+          "P29_004_ja": "東京會舘クッキングスクール",
+          "P29_003_name_ja": "各種学校",
+          "P29_005_ja": "東京都千代田区丸の内3-2-1",
+          "P29_008": "00",
+          "P29_003": 16015,
+          "P29_002": "H213310100053",
+          "P29_009_ja": "",
+          "P29_001": "13101",
+          "P29_007": 0,
+          "P29_006": 4
+        }
+      }
+    ]
+  }
+}

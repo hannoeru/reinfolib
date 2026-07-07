@@ -1,0 +1,26 @@
+{
+  "endpoint": "XKT022",
+  "methodName": "xkt022",
+  "alias": "getSteepSlopeHazardAreas",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:34.129Z",
+  "truncated": false,
+  "originalItemCount": 0,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "collapse_risk_area",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": []
+  }
+}

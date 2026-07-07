@@ -1,0 +1,105 @@
+{
+  "endpoint": "XKT011",
+  "methodName": "xkt011",
+  "alias": "getWelfareFacilities",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:28.415Z",
+  "truncated": false,
+  "originalItemCount": 3,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "welfare_facility",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.7658884525299,
+            35.690167058874025
+          ]
+        },
+        "properties": {
+          "_id": "lCf9lpABk4JyLPT23Q3f",
+          "_index": "bs008_welfare_facility_202407091914",
+          "P14_006_name_ja": "障害者サービス施設",
+          "P14_005_name_ja": "その他の社会福祉施設等",
+          "P14_008_ja": "atGPジョブトレ大手町",
+          "P14_004_ja": "内神田1-5-4　加藤ビル1階",
+          "P14_005": "99",
+          "P14_006": "9911",
+          "P14_007": "991100",
+          "P14_009": 4,
+          "P14_010": 1,
+          "P14_001": "東京都",
+          "P14_002": "千代田区",
+          "P14_003": "13101"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.76493895053864,
+            35.69030212243251
+          ]
+        },
+        "properties": {
+          "_id": "mCf9lpABk4JyLPT23Q3f",
+          "_index": "bs008_welfare_facility_202407091914",
+          "P14_006_name_ja": "障害者サービス施設",
+          "P14_005_name_ja": "その他の社会福祉施設等",
+          "P14_008_ja": "ベスリ就労支援センター",
+          "P14_004_ja": "内神田1-2-2　小川ビル　3階",
+          "P14_005": "99",
+          "P14_006": "9911",
+          "P14_007": "991100",
+          "P14_009": 4,
+          "P14_010": 2,
+          "P14_001": "東京都",
+          "P14_002": "千代田区",
+          "P14_003": "13101"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.7675460577011,
+            35.691343411221126
+          ]
+        },
+        "properties": {
+          "_id": "NSb9lpABk4JyLPT22v7C",
+          "_index": "bs008_welfare_facility_202407091914",
+          "P14_006_name_ja": "障害者サービス施設",
+          "P14_005_name_ja": "その他の社会福祉施設等",
+          "P14_008_ja": "ＨＯＰＥ神田",
+          "P14_004_ja": "内神田2-12-5",
+          "P14_005": "99",
+          "P14_006": "9911",
+          "P14_007": "991100",
+          "P14_009": 5,
+          "P14_010": 1,
+          "P14_001": "東京都",
+          "P14_002": "千代田区",
+          "P14_003": "13101"
+        }
+      }
+    ]
+  }
+}

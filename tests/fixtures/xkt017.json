@@ -1,0 +1,52 @@
+{
+  "endpoint": "XKT017",
+  "methodName": "xkt017",
+  "alias": "getLibraries",
+  "kind": "tile",
+  "params": {
+    "responseFormat": "geojson",
+    "zoom": 14,
+    "longitude": 139.767,
+    "latitude": 35.681
+  },
+  "fetchedAt": "2026-07-07T16:14:31.411Z",
+  "truncated": false,
+  "originalItemCount": 1,
+  "data": {
+    "type": "FeatureCollection",
+    "name": "cultural_facility",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::4612"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.75358247756958,
+            35.67667697866406
+          ]
+        },
+        "properties": {
+          "_id": "CbBAB44Byh1a-fbIIwi8",
+          "_index": "bs020_cultural_facility_202403040216",
+          "P27_001": "13101",
+          "P27_006_ja": "霞が関1-1-1（法務省内中央合同庁舎6号館赤れんが棟2階）",
+          "P27_004_name_ja": "図書館",
+          "P27_005_ja": "国会図書館支部法務図書館",
+          "P27_003_name_ja": "",
+          "P27_009": 9999,
+          "P27_008": -99,
+          "P27_007": 1,
+          "P27_004": "03003",
+          "P27_003": "99999",
+          "P27_002": "3"
+        }
+      }
+    ]
+  }
+}
